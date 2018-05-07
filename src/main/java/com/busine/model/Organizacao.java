@@ -2,11 +2,13 @@ package com.busine.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 //import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -24,9 +26,6 @@ public class Organizacao implements Serializable {
 	
 	@Column(name="NomeDaOrganizacao")
 	private String nomeDaOrganizacao;
-	
-	@Column(name="Senha")
-	private String senha;
 	
 	@Column(name="Descricao")
 	private String descricao;
@@ -47,21 +46,25 @@ public class Organizacao implements Serializable {
 	@Column(name="Oferta")
 	private List<Oferta> oferta;	
 	
+	@OneToMany (cascade = CascadeType.ALL)
+	private List<Cartao> cartoes;
+	
 	//mapear
 	@Column(name="CodOrganizacao")
 	private List<Anunciante> anunciantesFrequentes;
+	
+	
 	
 	public Organizacao() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Organizacao(long codOrganizacao, String nomeDaOrganizacao, String senha, String descricao, String endereco,
-			byte ddd, int tipoDeCNPJ, String telefone, List<Oferta> oferta, List<Anunciante> anunciantesFrequentes) {
+	public Organizacao(long codOrganizacao, String nomeDaOrganizacao, String descricao, String endereco, byte ddd,
+			int tipoDeCNPJ, String telefone, List<Oferta> oferta, List<Anunciante> anunciantesFrequentes) {
 		super();
 		this.codOrganizacao = codOrganizacao;
 		this.nomeDaOrganizacao = nomeDaOrganizacao;
-		this.senha = senha;
 		this.descricao = descricao;
 		this.endereco = endereco;
 		this.ddd = ddd;
@@ -69,14 +72,6 @@ public class Organizacao implements Serializable {
 		this.telefone = telefone;
 		this.oferta = oferta;
 		this.anunciantesFrequentes = anunciantesFrequentes;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
 	}
 
 	public String getNomeDaOrganizacao() {

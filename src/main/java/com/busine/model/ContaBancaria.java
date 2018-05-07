@@ -11,25 +11,25 @@ public class ContaBancaria implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CodContaBancaria")
-	private long codContaBancaria;
+	private Integer codContaBancaria;
 
 	@Column(name="Conta")
-	private String conta;
+	private Integer conta;
 	
 	@Column(name="DigitoConta")
-	private String digitoConta;
+	private Short digitoConta;
 
 	@Column(name="Agencia")
-	private String agencia;
+	private Integer agencia;
 	
 	@Column(name="DigitoAgencia")
-	private String digitoAgencia;
+	private Integer digitoAgencia;
 
 	@Column(name="Tipo")
 	private String tipo;
 
 	@Column(name="CodBanco")
-	private String codBanco;
+	private Integer codBanco;
 
 	@Column(name="NomeTitular")
 	private String nomeTitular;
@@ -42,8 +42,8 @@ public class ContaBancaria implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ContaBancaria(long codContaBancaria, String conta, String digitoConta, String agencia, String digitoAgencia,
-			String tipo, String codBanco, String nomeTitular, String cpfTitular) {
+	public ContaBancaria(Integer codContaBancaria, Integer conta, Short digitoConta, Integer agencia,
+			Integer digitoAgencia, String tipo, Integer codBanco, String nomeTitular, String cpfTitular) {
 		super();
 		this.codContaBancaria = codContaBancaria;
 		this.conta = conta;
@@ -56,44 +56,20 @@ public class ContaBancaria implements Serializable {
 		this.cpfTitular = cpfTitular;
 	}
 
-	public long getCodContaBancaria() {
+	public Integer getCodContaBancaria() {
 		return codContaBancaria;
 	}
 
-	public void setCodContaBancaria(long codContaBancaria) {
+	public void setCodContaBancaria(Integer codContaBancaria) {
 		this.codContaBancaria = codContaBancaria;
 	}
 
-	public String getConta() {
-		return conta;
-	}
-
-	public void setConta(String conta) {
-		this.conta = conta;
-	}
-
-	public String getDigitoConta() {
-		return digitoConta;
-	}
-
-	public void setDigitoConta(String digitoConta) {
-		this.digitoConta = digitoConta;
-	}
-
-	public String getAgencia() {
+	public Integer getAgencia() {
 		return agencia;
 	}
 
-	public void setAgencia(String agencia) {
+	public void setAgencia(Integer agencia) {
 		this.agencia = agencia;
-	}
-
-	public String getDigitoAgencia() {
-		return digitoAgencia;
-	}
-
-	public void setDigitoAgencia(String digitoAgencia) {
-		this.digitoAgencia = digitoAgencia;
 	}
 
 	public String getTipo() {
@@ -104,11 +80,11 @@ public class ContaBancaria implements Serializable {
 		this.tipo = tipo;
 	}
 
-	public String getCodBanco() {
+	public Integer getCodBanco() {
 		return codBanco;
 	}
 
-	public void setCodBanco(String codBanco) {
+	public void setCodBanco(Integer codBanco) {
 		this.codBanco = codBanco;
 	}
 
@@ -126,6 +102,30 @@ public class ContaBancaria implements Serializable {
 
 	public void setCpfTitular(String cpfTitular) {
 		this.cpfTitular = cpfTitular;
+	}
+
+	public Integer getConta() {
+		return conta;
+	}
+
+	public void setConta(Integer conta) {
+		this.conta = conta;
+	}
+
+	public Short getDigitoConta() {
+		return digitoConta;
+	}
+
+	public void setDigitoConta(Short digitoConta) {
+		this.digitoConta = digitoConta;
+	}
+
+	public Integer getDigitoAgencia() {
+		return digitoAgencia;
+	}
+
+	public void setDigitoAgencia(Integer digitoAgencia) {
+		this.digitoAgencia = digitoAgencia;
 	}
 
 	

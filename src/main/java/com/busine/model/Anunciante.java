@@ -20,7 +20,7 @@ public class Anunciante implements Serializable {
 	@Column(name="CodAnunciante")
 	private long codAnunciante;
 	
-	//(analisar)
+	//analisar JsonIgnore
 	@JsonIgnore
 	//bi-directional many-to-one association to Pedido
 	@ManyToMany(mappedBy="anuciante")
@@ -28,7 +28,7 @@ public class Anunciante implements Serializable {
 	
 	//experimental
 	@Column(name="Saldo")
-	private long saldo;
+	private String saldo;
 	
 	@Column(name="Usuario")
 	private String usuario;
@@ -44,11 +44,11 @@ public class Anunciante implements Serializable {
 	private String senha;
 	
 	@Column(name="Genero")
-	private String genero;
+	private Integer genero;
 	
 	//experimental
 	@Column(name="Foto")
-	private int foto;
+	private Integer foto;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="DataNascimento")
@@ -58,39 +58,34 @@ public class Anunciante implements Serializable {
 	private String email;
 	
 	@Column(name="Telefone")
-	private String telefone;
+	private Integer telefone;
 
-	//experimental
 	@Column(name="Endereço")
 	private String endereco;
 
-	//estranho {
-	
 	@Column(name="Cnpj")
-	private String cnpj;
+	private Integer cnpj;
 	
 	@Column(name="TipoCnpj")
 	private String tipoCnpj;
 
 	@Column(name="Cpf")
-	private String cpf;
+	private Integer cpf;
 
 	@Column(name="Pis")
-	private String pis;
+	private Integer pis;
 
 	@Column(name="Inss")
-	private String inss;
-	
-	//}
+	private Integer inss;
 
 	public Anunciante() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Anunciante(long codAnunciante, List<Oferta> ofertasAceitas, long saldo, String usuario, String nome,
-			String sobrenome, String senha, String genero, int foto, Date dataNascimento, String email, String telefone,
-			String endereco, String cnpj, String tipoCnpj, String cpf, String pis, String inss) {
+	public Anunciante(Integer codAnunciante, List<Oferta> ofertasAceitas, String saldo, String usuario, String nome,
+			String sobrenome, String senha, Integer genero, Integer foto, Date dataNascimento, String email,
+			Integer telefone, String endereco, Integer cnpj, String tipoCnpj, Integer cpf, Integer pis, Integer inss) {
 		super();
 		this.codAnunciante = codAnunciante;
 		this.ofertasAceitas = ofertasAceitas;
@@ -116,219 +111,147 @@ public class Anunciante implements Serializable {
 		return codAnunciante;
 	}
 
-
-
-	public void setCodAnunciante(long codAnunciante) {
+	public void setCodAnunciante(Integer codAnunciante) {
 		this.codAnunciante = codAnunciante;
 	}
-
-
 
 	public List<Oferta> getOfertasAceitas() {
 		return ofertasAceitas;
 	}
 
-
-
 	public void setOfertasAceitas(List<Oferta> ofertasAceitas) {
 		this.ofertasAceitas = ofertasAceitas;
 	}
 
-
-
-	public long getSaldo() {
+	public String getSaldo() {
 		return saldo;
 	}
 
-
-
-	public void setSaldo(long saldo) {
+	public void setSaldo(String saldo) {
 		this.saldo = saldo;
 	}
-
-
 
 	public String getUsuario() {
 		return usuario;
 	}
 
-
-
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-
-
 
 	public String getNome() {
 		return nome;
 	}
 
-
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-
 
 	public String getSobrenome() {
 		return sobrenome;
 	}
 
-
-
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
-
-
 
 	public String getSenha() {
 		return senha;
 	}
 
-
-
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 
-
-
-	public String getGenero() {
+	public Integer getGenero() {
 		return genero;
 	}
 
-
-
-	public void setGenero(String genero) {
+	public void setGenero(Integer genero) {
 		this.genero = genero;
 	}
 
-
-
-	public int getFoto() {
+	public Integer getFoto() {
 		return foto;
 	}
 
-
-
-	public void setFoto(int foto) {
+	public void setFoto(Integer foto) {
 		this.foto = foto;
 	}
-
-
 
 	public Date getDataNascimento() {
 		return dataNascimento;
 	}
 
-
-
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-
-
 
 	public String getEmail() {
 		return email;
 	}
 
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-
-
-	public String getTelefone() {
+	public Integer getTelefone() {
 		return telefone;
 	}
 
-
-
-	public void setTelefone(String telefone) {
+	public void setTelefone(Integer telefone) {
 		this.telefone = telefone;
 	}
-
-
 
 	public String getEndereco() {
 		return endereco;
 	}
 
-
-
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 
-
-
-	public String getCnpj() {
+	public Integer getCnpj() {
 		return cnpj;
 	}
 
-
-
-	public void setCnpj(String cnpj) {
+	public void setCnpj(Integer cnpj) {
 		this.cnpj = cnpj;
 	}
-
-
 
 	public String getTipoCnpj() {
 		return tipoCnpj;
 	}
 
-
-
 	public void setTipoCnpj(String tipoCnpj) {
 		this.tipoCnpj = tipoCnpj;
 	}
 
-
-
-	public String getCpf() {
+	public Integer getCpf() {
 		return cpf;
 	}
 
-
-
-	public void setCpf(String cpf) {
+	public void setCpf(Integer cpf) {
 		this.cpf = cpf;
 	}
 
-
-
-	public String getPis() {
+	public Integer getPis() {
 		return pis;
 	}
 
-
-
-	public void setPis(String pis) {
+	public void setPis(Integer pis) {
 		this.pis = pis;
 	}
 
-
-
-	public String getInss() {
+	public Integer getInss() {
 		return inss;
 	}
 
-
-
-	public void setInss(String inss) {
+	public void setInss(Integer inss) {
 		this.inss = inss;
 	}
-
-
-
-	public Oferta addOferta(Oferta oferta) {
+	
+	/*public Oferta addOferta(Oferta oferta) {
 		getOfertasAceitas().add(oferta);
 		oferta.setAnunciante(this);
 
@@ -340,6 +263,7 @@ public class Anunciante implements Serializable {
 		oferta.setAnunciante(null);
 
 		return oferta;
-	}
+	}*/
 
 }
+

@@ -2,7 +2,8 @@ package com.busine.model;
 
 import java.io.Serializable;
 import java.util.Date;
-		
+
+
 import javax.persistence.*;
 
 @Entity
@@ -17,7 +18,7 @@ public class Cartao implements Serializable {
 	private long codCartao;
 
 	@Column(name="Numero")
-	private String numero;
+	private Integer numero;
 
 	@Column(name="Tipo")
 	private String tipo;
@@ -27,17 +28,17 @@ public class Cartao implements Serializable {
 	private Date dataValidade;
 	
 	@Column(name="CodSegurança")
-	private String codSegurança;
+	private Integer codSegurança;
 
 	@Column(name="NomeTitular")
 	private String nomeTitular;
-
+	
 	public Cartao() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cartao(long codCartao, String numero, String tipo, Date dataValidade, String codSegurança,
+	public Cartao(Integer codCartao, Integer numero, String tipo, Date dataValidade, Integer codSegurança,
 			String nomeTitular) {
 		super();
 		this.codCartao = codCartao;
@@ -52,15 +53,15 @@ public class Cartao implements Serializable {
 		return codCartao;
 	}
 
-	public void setCodCartao(long codCartao) {
+	public void setCodCartao(Integer codCartao) {
 		this.codCartao = codCartao;
 	}
 
-	public String getNumero() {
+	public Integer getNumero() {
 		return numero;
 	}
 
-	public void setNumero(String numero) {
+	public void setNumero(Integer numero) {
 		this.numero = numero;
 	}
 
@@ -80,14 +81,6 @@ public class Cartao implements Serializable {
 		this.dataValidade = dataValidade;
 	}
 
-	public String getCodSegurança() {
-		return codSegurança;
-	}
-
-	public void setCodSegurança(String codSegurança) {
-		this.codSegurança = codSegurança;
-	}
-
 	public String getNomeTitular() {
 		return nomeTitular;
 	}
@@ -96,7 +89,12 @@ public class Cartao implements Serializable {
 		this.nomeTitular = nomeTitular;
 	}
 
-	
-	
+	public Integer getCodSegurança() {
+		return codSegurança;
+	}
+
+	public void setCodSegurança(Integer codSegurança) {
+		this.codSegurança = codSegurança;
+	}
 	
 }
