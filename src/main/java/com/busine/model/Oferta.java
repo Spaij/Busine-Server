@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+//imports
 @Entity
 @Table(name="oferta_tb")
 public class Oferta {
